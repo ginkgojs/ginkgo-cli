@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "ginkgo": "/bin/ginkgo",
-    "ginkgo-init": "/bin/ginkgo-init",
-    "ginkgo-controller": "/bin/ginkgo-controller"
+    "ginkgo": "bin/ginkgo",
+    "ginkgo-init": "bin/ginkgo-init",
+    "ginkgo-controller": "bin/ginkgo-controller"
   },
   "dependencies": {
     "chalk": "^2.1.0",
