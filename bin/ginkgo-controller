@@ -25,14 +25,19 @@ program.on('--help', function () {
   const version = program.args[0]
   const name = program.args[1]
   const projectPath = path.resolve('.')
-  const versionPath = path.join(projectPath, version)
-  const controllerPath = path.join(projectPath, 'controllers', version, name)
-  if (!fs.existsSync(versionPath)) {
-    fs.mkdirSync(versionPath)
-  }
+  const controllerPath = path.join(projectPath, 'controllers')
+  const versionPath = path.join(controllerPath, version)
+  const destPath = path.join(versionPath, name)
 
   if (!fs.existsSync(controllerPath)) {
-    run(controllerPath)
+    fs.mkdirSync(controllerPath)
+  }
+  if (!fs.existsSync(versionPath)) {
+    fs.mkdirSync(versionPath)    
+  }
+
+  if (!fs.existsSync(destPath)) {
+    run(destPath)
   } else {
     inquirer.prompt([{
       type: 'confirm',
@@ -41,7 +46,7 @@ program.on('--help', function () {
     }])
     .then(function(answers) {
       if (answers.ok) {
-        run(controllerPath)
+        run(destPath)
       }
     })
   }
