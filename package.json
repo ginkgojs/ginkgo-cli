@@ -1,8 +1,16 @@
 {
   "name": "ginkgo-cli",
   "version": "1.0.0",
-  "description": "- 1. 初始化项目 - 2. 新增controller",
+  "description": "",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ginkgo": "/bin/ginkgo",
+    "ginkgo-init": "/bin/ginkgo-init",
+    "ginkgo-controller": "/bin/ginkgo-controller"
+  },
   "dependencies": {
     "chalk": "^2.1.0",
     "commander": "^2.11.0",
@@ -12,9 +20,6 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ginkgojs/ginkgo-cli.git"
